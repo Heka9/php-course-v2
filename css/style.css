@@ -447,6 +447,38 @@ body::after {
 }
 */
 
+.footer {
+  color: #fff;
+  background-color: #000;
+  padding: 1.875rem 0rem;
+}
+
+.footer__container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (auto)[4];
+  grid-template-columns: repeat(4, auto);
+  row-gap: 20px;
+  line-height: 20px;
+}
+
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .main-block__container {
   position: relative;
   display: -ms-grid;
@@ -662,7 +694,7 @@ body::after {
   position: relative;
   z-index: 1;
   padding: 1.5rem 1.5rem 1.5rem 1.875rem;
-  color: #0038ff;
+  color: #000;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
@@ -674,7 +706,7 @@ body::after {
 }
 
 .price-block__discont {
-  color: #0038ff;
+  color: #bdff00;
   font-family: Inter;
   font-size: 30px;
   font-weight: 700;
@@ -936,7 +968,7 @@ body::after {
   position: relative;
 }
 
-.qa__main-title {
+.qa__main-title.title {
   font-size: 2.1875rem;
   color: #fff;
   position: relative;
@@ -1089,6 +1121,12 @@ body::after {
     -webkit-column-gap: 2.5rem;
        -moz-column-gap: 2.5rem;
             column-gap: 2.5rem;
+  }
+
+  .footer__container {
+    -webkit-column-gap: 4.0625rem;
+       -moz-column-gap: 4.0625rem;
+            column-gap: 4.0625rem;
   }
 
   .main-block__container {
@@ -1412,7 +1450,7 @@ body::after {
     bottom: -100px;
   }
 
-  .qa__main-title {
+  .qa__main-title.title {
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
@@ -1448,6 +1486,12 @@ body::after {
 }
 
 @media (max-width: 29.99875em) {
+  .footer__container {
+    -webkit-column-gap: 1.875rem;
+       -moz-column-gap: 1.875rem;
+            column-gap: 1.875rem;
+  }
+
   .main-block__container {
     padding-top: 6.0625rem;
   }
@@ -1661,6 +1705,22 @@ body::after {
 }
 
 @media (min-width: 29.99875em) and (max-width: 79.375em) {
+@supports ((-moz-column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem )) or (column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem ))) {
+    .footer__container {
+      -webkit-column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem );
+         -moz-column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem );
+              column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem )) or (column-gap: clamp( 1.875rem , 0.5459751019rem  +  4.4302675882vw , 4.0625rem ))) {
+    .footer__container {
+      -webkit-column-gap: calc(1.875rem + 2.1875 * (100vw - 29.99875rem) / 49.37625);
+         -moz-column-gap: calc(1.875rem + 2.1875 * (100vw - 29.99875rem) / 49.37625);
+              column-gap: calc(1.875rem + 2.1875 * (100vw - 29.99875rem) / 49.37625);
+    }
+}
+
 @supports (padding-top: clamp( 6.0625rem , 5.0372522215rem  +  3.4176349966vw , 7.75rem )) {
     .main-block__container {
       padding-top: clamp( 6.0625rem , 5.0372522215rem  +  3.4176349966vw , 7.75rem );
