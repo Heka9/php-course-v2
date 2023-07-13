@@ -1453,7 +1453,7 @@ body::after {
   }
 
   .response__number {
-    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .try-main-block__bottom .try-main-block__button {
