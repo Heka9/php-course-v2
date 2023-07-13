@@ -1691,6 +1691,10 @@ body::after {
     margin-bottom: 2.375rem;
   }
 
+.item-emotional__title{
+	width: 100%
+}
+
   .emotional__main-decor-1 {
     left: 17.875rem;
   }
