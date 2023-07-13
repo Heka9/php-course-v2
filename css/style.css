@@ -450,6 +450,10 @@ body::after {
 .footer {
   color: #fff;
   background-color: #000;
+  padding: 1.875rem 0rem;
+}
+
+.main-page .footer {
   padding: 1.875rem 0rem 6.875rem 0rem;
 }
 
