@@ -1537,7 +1537,7 @@ body::after {
   }
 
   .item-programm__button {
-    padding-bottom: 1.5625rem;
+    padding-bottom: 1.25rem;
   }
 
   .qa {
@@ -2800,15 +2800,15 @@ body::after {
     }
 }
 
-@supports (padding-bottom: clamp( 0.9375rem , 0.5577786005rem  +  1.2657907395vw , 1.5625rem )) {
+@supports (padding-bottom: clamp( 0.9375rem , 0.7476393003rem  +  0.6328953697vw , 1.25rem )) {
     .item-programm__button {
-      padding-bottom: clamp( 0.9375rem , 0.5577786005rem  +  1.2657907395vw , 1.5625rem );
+      padding-bottom: clamp( 0.9375rem , 0.7476393003rem  +  0.6328953697vw , 1.25rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 0.9375rem , 0.5577786005rem  +  1.2657907395vw , 1.5625rem )) {
+@supports not (padding-bottom: clamp( 0.9375rem , 0.7476393003rem  +  0.6328953697vw , 1.25rem )) {
     .item-programm__button {
-      padding-bottom: calc(0.9375rem + 0.625 * (100vw - 29.99875rem) / 49.37625);
+      padding-bottom: calc(0.9375rem + 0.3125 * (100vw - 29.99875rem) / 49.37625);
     }
 }
 
