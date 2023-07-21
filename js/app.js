@@ -3648,7 +3648,18 @@
     const da = new DynamicAdapt("max");
     da.init();
     const clock = document.getElementById("timer");
-    const deadline = "July 22 2023";
+    const promoTime = 15;
+    const curTime = Date.now();
+    let deadline;
+    if (!localStorage.getItem("promoEnd")) {
+        deadline = new Date;
+        deadline.setMinutes(deadline.getMinutes() + promoTime);
+        localStorage.setItem("promoEnd", new Date(deadline.getTime()));
+    } else if (localStorage.getItem("promoEnd") && new Date(curTime) > new Date(localStorage.getItem("promoEnd"))) {
+        deadline = new Date;
+        deadline.setMinutes(deadline.getMinutes() + promoTime);
+        localStorage.setItem("promoEnd", new Date(deadline.getTime()));
+    } else deadline = localStorage.getItem("promoEnd");
     if (clock) initializeClock(clock, deadline);
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date);
@@ -3669,7 +3680,12 @@
             let t = getTimeRemaining(endtime);
             hours.innerHTML = ("0" + t.hours).slice(-2);
             minutes.innerHTML = ("0" + t.minutes).slice(-2);
-            if (t.total <= 0) clearInterval(timeinterval);
+            if (t.total <= 0) {
+                clearInterval(timeinterval);
+                hours.innerHTML = "00";
+                minutes.innerHTML = "00";
+                localStorage.removeItem("promoEnd");
+            }
         }
         const timeinterval = setInterval(updateClock, 1e3);
         updateClock();
