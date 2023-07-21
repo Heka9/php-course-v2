@@ -3647,6 +3647,31 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    const clock = document.getElementById("timer");
+    const deadline = "July 22 2023";
+    if (clock) initializeClock(clock, deadline);
+    function getTimeRemaining(endtime) {
+        let t = Date.parse(endtime) - Date.parse(new Date);
+        let minutes = Math.floor(t / 1e3 / 60 % 60);
+        let hours = Math.floor(t / (1e3 * 60 * 60) % 24);
+        return {
+            total: t,
+            hours,
+            minutes
+        };
+    }
+    function initializeClock(clock, endtime) {
+        let hours = clock.querySelector(".timer__hours");
+        let minutes = clock.querySelector(".timer__minutes");
+        function updateClock() {
+            let t = getTimeRemaining(endtime);
+            hours.innerHTML = ("0" + t.hours).slice(-2);
+            minutes.innerHTML = ("0" + t.minutes).slice(-2);
+            if (t.total <= 0) clearInterval(timeinterval);
+        }
+        const timeinterval = setInterval(updateClock, 1e3);
+        updateClock();
+    }
     window["FLS"] = false;
     isWebp();
     spollers();
