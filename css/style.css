@@ -22,7 +22,7 @@
   font-family: RadiateSansBoldExpanded;
   font-display: swap;
   src: url("../fonts/RadiateSans-BoldExpanded.woff2") format("woff2"), url("../fonts/RadiateSans-BoldExpanded.woff") format("woff");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -30,7 +30,7 @@
   font-family: RadiateSansSemiBoldSemiExpanded;
   font-display: swap;
   src: url("../fonts/RadiateSans-SemiBoldSemiExpanded.woff2") format("woff2"), url("../fonts/RadiateSans-SemiBoldSemiExpanded.woff") format("woff");
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -1550,14 +1550,34 @@ body::after {
 }
 
 .action-promo .form-promo__input-text input {
+  color: #000;
   border-radius: 37px;
   background: #fff;
   height: 2.0625rem;
   width: 100%;
-  color: #aaa;
   font-size: 12px;
   text-transform: capitalize;
   padding: 0.5625rem 1.125rem;
+}
+
+.action-promo .form-promo__input-text input::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.action-promo .form-promo__input-text input::-moz-placeholder {
+  color: #aaa;
+}
+
+.action-promo .form-promo__input-text input:-ms-input-placeholder {
+  color: #aaa;
+}
+
+.action-promo .form-promo__input-text input::-ms-input-placeholder {
+  color: #aaa;
+}
+
+.action-promo .form-promo__input-text input::placeholder {
+  color: #aaa;
 }
 
 .action-promo .form-promo__input-text:not(:last-child) {
@@ -1596,6 +1616,78 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.action-promo .timer__hours {
+  width: 63.6px;
+  height: 77.7px;
+  position: relative;
+  z-index: 2;
+}
+
+.action-promo .timer__hours::before {
+  content: "00";
+  color: rgba(217, 225, 255, 0.4);
+  text-align: right;
+  font-size: 70px;
+  line-height: 111.5%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.action-promo .timer__dotts {
+  width: 31.85px;
+  height: 77.7px;
+  position: relative;
+  z-index: 2;
+}
+
+.action-promo .timer__dotts::before {
+  content: ":";
+  color: rgba(217, 225, 255, 0.4);
+  text-align: right;
+  font-size: 70px;
+  line-height: 111.5%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.action-promo .timer__minutes {
+  width: 63.6px;
+  height: 77.7px;
+  position: relative;
+  z-index: 2;
+}
+
+.action-promo .timer__minutes::before {
+  content: "00";
+  color: rgba(217, 225, 255, 0.4);
+  text-align: right;
+  font-size: 70px;
+  line-height: 111.5%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .swiper-initialized {

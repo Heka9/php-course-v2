@@ -3663,6 +3663,8 @@
     function initializeClock(clock, endtime) {
         let hours = clock.querySelector(".timer__hours");
         let minutes = clock.querySelector(".timer__minutes");
+        let dotts = clock.querySelector(".timer__dotts");
+        dotts.textContent = ":";
         function updateClock() {
             let t = getTimeRemaining(endtime);
             hours.innerHTML = ("0" + t.hours).slice(-2);
